@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MaintenanceController;
 use App\Livewire\Auth\Login;
 use App\Livewire\Auth\Register;
 use App\Livewire\Auth\Verify;
@@ -20,7 +21,11 @@ use App\Livewire\User\Profile\Index;
 use App\Livewire\User\Profile\Kyc;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', Home::class)->name('home');
+Route::get('/', [MaintenanceController::class, 'coming'])->name('home');
+Route::any('{any}', function () {
+        return redirect()->route('home');
+})->where('any', '.*');
+
 Route::get('/product/bid', Bid::class)->name('product.bid');
 Route::get('/product/buy', Buy::class)->name('product.buy');
 Route::get('/product/swap', Swap::class)->name('product.swap');
