@@ -15,7 +15,7 @@
     <!-- Open Graph (Facebook, LinkedIn, etc.) -->
     <meta property="og:title" content="9rato | Buy, Sell, Swap, Bid & Trade - Coming Soon">
     <meta property="og:description" content="Join 9rato — the platform where you can buy, sell, swap, bid, and trade effortlessly. Launching soon!">
-    <meta property="og:image" content="https://9rato.com/assets/images/Frame.svg">
+    <meta property="og:image" content="https://9rato.com/assets/images/og-image.png">
     <meta property="og:url" content="https://9rato.com">
     <meta property="og:type" content="website">
 
@@ -23,7 +23,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="9rato | Buy, Sell, Swap, Bid & Trade - Coming Soon">
     <meta name="twitter:description" content="A smarter way to buy, sell, swap, bid, and trade. Coming soon!">
-    <meta name="twitter:image" content="https://9rato.com/assets/images/Frame.svg">
+    <meta name="twitter:image" content="https://9rato.com/assets/images/og-image.png">
 
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('assets/images/Frame.svg') }}" type="image/x-icon">
