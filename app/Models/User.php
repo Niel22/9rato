@@ -45,4 +45,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function kyc(){
+        return $this->hasOne(KYC::class, 'user_id');
+    }
 }

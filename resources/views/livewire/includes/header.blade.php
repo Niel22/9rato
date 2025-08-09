@@ -106,7 +106,7 @@
                                     <i class="fa-solid fa-bars"></i>
                                 </span>
                             </button>
-                            <a href="{{ route('home') }}" class="web-logo nav-logo" style="font-size: 40px; font-weight: bold">
+                            <a href="{{ route('home') }}" class="web-logo nav-logo" style="font-size: 40px; font-weight: bold;">
                                 <img src="{{ asset('assets/images/Frame.svg') }}" style="width: 40px" class="img-fluid blur-up lazyload" alt="">rato
                             </a>
 
@@ -177,20 +177,40 @@
                                             </div>
                                             <div class="delivery-detail">
                                                 <h6>Hello,</h6>
-                                                <h5>My Account</h5>
+                                                @auth
+                                                    <h5>{{ Auth::user()->name }}</h5>
+                                                @endauth
+
+                                                @guest
+                                                    <h5>Guest</h5>
+                                                @endguest
                                             </div>
                                         </div>
 
                                         <div class="onhover-div onhover-div-login">
                                             <ul class="user-box-name">
-                                                <li class="product-box-contain">
-                                                    <i></i>
-                                                    <a href="login.html">Log In</a>
-                                                </li>
+                                                @guest
+                                                    <li class="product-box-contain">
+                                                        <i></i>
+                                                        <a href="{{ route('login') }}">Log In</a>
+                                                    </li>
 
-                                                <li class="product-box-contain">
-                                                    <a href="sign-up.html">Register</a>
-                                                </li>
+                                                    <li class="product-box-contain">
+                                                        <a href="{{ route('register') }}">Register</a>
+                                                    </li>
+                                                @endguest
+
+                                                @auth
+                                                    <li class="product-box-contain">
+                                                        <a href="{{ route('user.dashboard') }}">Dashboard</a>
+                                                    </li>
+                                                    <li class="product-box-contain">
+                                                        <a href="{{ route('login') }}">Profile</a>
+                                                    </li>
+                                                    <li class="product-box-contain">
+                                                        <a class="text-danger" href="{{ route('logout') }}">Logout</a>
+                                                    </li>
+                                                @endauth
                                             </ul>
                                         </div>
                                     </li>
